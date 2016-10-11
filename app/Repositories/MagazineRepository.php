@@ -20,9 +20,11 @@ class MagazineRepository implements MagazineRepositoryInterface {
         $this->magazine = $magazine;
     }
 
-    public function find()
+    public function find($order = "asc")
     {
-        return $this->magazine->all();
+        return $this->magazine
+            ->orderBy('id', $order)
+            ->all();
     }
 
     public function findBy($name, $value)

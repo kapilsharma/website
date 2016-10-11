@@ -28,9 +28,9 @@ class MagazineService {
      *
      * @return \Illuminate\Database\Eloquent\Collection
      */
-    public function getAllMagazines()
+    public function getAllMagazines($order = "asc")
     {
-        return $this->magazineRepo->find();
+        return $this->magazineRepo->find($order);
     }
 
     /**
